@@ -1,373 +1,505 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anas KIOUAZ - Développeur</title>
-    <link rel="stylesheet" href="style.css   ">
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">AK</div>
-        <a href="cv/CV anas.pdf" target="_blank" class="nav-link">Curriculum Vitae</a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#education">Formation</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="mobile-menu" onclick="toggleMobileMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas KIOUAZ — Digital Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+    <div class="grain-overlay"></div>
+    
+    <nav class="nav-glass" id="mainNav">
+        <div class="nav-inner">
+            <div class="logo-container">
+                <span class="logo-mark">AK</span>
+                <span class="logo-subtitle">Developer</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-text="Accueil">Accueil</a></li>
+                <li><a href="#about" class="nav-link" data-text="Parcours">Parcours</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projets">Projets</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Expertise">Expertise</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            
+            <a href="cv/CV anas.pdf" target="_blank" class="cta-nav">
+                <span>Curriculum</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M1 15L15 1M15 1H5M15 1V11" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </a>
         </div>
-      </div>
+        <div class="scroll-progress"></div>
     </nav>
 
-    <div class="container">
-      <!-- Home Section -->
-      <section id="home" class="section">
-        <div class="home-section">
-          <div class="hero-content">
-            <h1>Anas KIOUAZ</h1>
-            <p class="subtitle">Développeur & Étudiant en Informatique à Grenoble</p>
-            <p class="description">
-                Passionné par le développement logiciel, l'intelligence artificielle et les nouvelles technologies. 
-                Actuellement en 2ᵉ année de BUT Informatique à l'IUT2 de Grenoble,
-                je souhaite devenir ingénieur développeur spécialisé en <strong>FinTech</strong>, afin de contribuer à l'innovation 
-                technologique dans le secteur financier.            
-            </p>
-            <div class="cta-buttons">
-              <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-              <a href="#contact" class="btn btn-outline">Me contacter</a>
-              <a href="https://github.com/Jolly-Ak" target="_blank" class="btn btn-outline">GitHub</a>
+    <section id="home" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-eyebrow" data-scroll-reveal>
+                    <span class="status-dot"></span>
+                    <span>Disponible pour nouveaux projets</span>
+                </div>
+                
+                <h1 class="hero-title" data-scroll-reveal>
+                    <span class="title-line">Anas</span>
+                    <span class="title-line title-highlight">KIOUAZ</span>
+                </h1>
+                
+                <div class="hero-subtitle" data-scroll-reveal>
+                    <p class="subtitle-large">Développeur & Étudiant en Informatique</p>
+                    <p class="subtitle-location">Basé à Grenoble, France</p>
+                </div>
+                
+                <p class="hero-description" data-scroll-reveal>
+                    Passionné par le développement logiciel, l'intelligence artificielle et les nouvelles technologies. 
+                    Actuellement en 2ᵉ année de BUT Informatique à l'IUT2, 
+                    je construis ma voie vers l'ingénierie <span class="text-accent">FinTech</span>.
+                </p>
+                
+                <div class="hero-actions" data-scroll-reveal>
+                    <a href="#projects" class="btn-primary">
+                        <span>Découvrir mes projets</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>Entrer en contact</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats" data-scroll-reveal>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Projets Réalisés</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">2025</span>
+                        <span class="stat-label">Diplôme BUT</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">19</span>
+                        <span class="stat-label">Ans</span>
+                    </div>
+                </div>
             </div>
-          </div>
+            
+            <div class="hero-visual">
+                <div class="visual-blob blob-1"></div>
+                <div class="visual-blob blob-2"></div>
+                <div class="visual-mesh"></div>
+            </div>
         </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="section">
-        <h2 class="section-title">À propos</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <h3>Développeur en formation</h3>
-<p>
-  Étudiant de 19 ans en deuxième année de BUT <strong>Informatique</strong> à l'IUT2 de Grenoble, titulaire d'un baccalauréat scientifique mention <strong>Bien</strong>. Je me forme en développement <strong>logiciel</strong>, intelligence <strong>artificielle</strong> et analyse de <strong>données</strong>.
-</p>
-<p>
-  Mon parcours m'a permis d'acquérir des compétences en <strong>programmation</strong>, notamment en <strong>Python</strong> et <strong>Java</strong>, ainsi que des bases en machine <strong>learning</strong> et développement <strong>web</strong> à travers divers projets.
-</p>
-<p>
-  Je cherche à résoudre des problématiques <strong>réelles</strong> tout en continuant d'<strong>apprendre</strong> et en développant mon <strong>autonomie</strong> et mon esprit de <strong>collaboration</strong>.
-</p></div>
-          <div class="contact-info">
-            <div class="contact-item">
-              <span>Âge:</span>
-              <span>19 ans</span>
-            </div>
-            <div class="contact-item">
-              <span>Localisation:</span>
-              <span>Saint-Martin-d'Hères, France</span>
-            </div>
-            <div class="contact-item">
-              <span>Études:</span>
-              <span>BUT Informatique - IUT2 Grenoble</span>
-            </div>
-            <div class="contact-item">
-              <span>Disponibilité:</span>
-              <span>Stage, Projets, Freelance</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="section">
-        <h2 class="section-title">Formation & Expérience</h2>
-
-        <div class="timeline-item">
-          <h3>BUT Informatique – 2ème année</h3>
-          <div class="timeline-date">2024 – 2025</div>
-          <div class="timeline-location">
-            IUT2 de Grenoble – Université Grenoble Alpes
-          </div>
-          <p>
-            Formation complète en informatique couvrant le développement
-            logiciel, les bases de données, les réseaux, et l'intelligence
-            artificielle.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Baccalauréat Scientifique – Mention Bien</h3>
-          <div class="timeline-date">2021 – 2023</div>
-          <div class="timeline-location">
-            Lycée Charles-Gabriel Pravaz, Pont-de-Beauvoisin
-          </div>
-          <p>
-            Spécialités : Mathématiques et NSI (Numérique et Sciences de
-            l'Informatique)
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Ouvrier sur chantier</h3>
-          <div class="timeline-date">2022-2023 (1 mois)</div>
-          <div class="timeline-location">Saint-Alban-de-Montbel, Savoie</div>
-          <p>
-            Expérience terrain développant les compétences en travail d'équipe,
-            rigueur et adaptabilité.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Stage en Pharmacie</h3>
-          <div class="timeline-date">2021 (1 semaine)</div>
-          <div class="timeline-location">
-            Pharmacie Bois-Windey, Pont de Beauvoisin
-          </div>
-          <p>
-            Découverte du milieu professionnel et développement des compétences
-            relationnelles.
-          </p>
-        </div>    
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <h2 class="section-title">Projets</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Classification automatique de dépêches</h3>
-              <div class="project-links">
-                <a href="https://github.com/Jolly-Ak/News-Classification-ML" target="_blank" class="project-link">
-                  GitHub <img src="img/GitHub-icone.png" alt="GitHub" class="github-icon">
-                </a>
-              </div>
-            </div>
-            <div class="project-tech">Java • Machine Learning • TF-IDF • KNN • NLP</div>
-            <p>
-              <strong>Janvier 2025</strong> - Système de classification de textes combinant approche lexicale et
-  algorithme K-Nearest Neighbors. Optimisation de la précision via
-  enrichissement du lexique et évaluation comparative des
-  performances. Implémentation d'algorithmes de préprocessing avancés.
-            </p>
-            <div class="project-images">
-              <img src="img/ML1.png" alt="Architecture ML" class="project-image">
-              <img src="img/ML2.png" alt="Résultats" class="project-image">
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Classification d'images par CNN</h3>
-              <div class="project-links">
-                <a href="https://github.com/Jolly-Ak/Valorant-Kill-Detection" target="_blank" class="project-link">
-                  GitHub <img src="img/GitHub-icone.png" alt="GitHub" class="github-icon">
-                </a>
-              </div>
-            </div>
-            <div class="project-tech">Python • TensorFlow • Keras • Deep Learning • Computer Vision</div>
-            <p>
-              <strong>Janvier-Février 2024</strong> - Développement d'un modèle de réseau de neurones convolutifs pour
-  la classification d'images multi-classes. Pipeline complet avec
-  prétraitement, data augmentation, entraînement, évaluation et 
-  visualisation des performances. Optimisation des hyperparamètres.
-            </p>
-            <div class="project-images">
-              <img src="img/VKD1.png" alt="CNN Architecture" class="project-image">
-              <img src="img/1745556736982.jpg" alt="Training" class="project-image">
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Application de Gestion JavaFX</h3>
-              <div class="project-links">
-                <a href="https://gricad-gitlab.univ-grenoble-alpes.fr/iut2-info-stud/2025-s2/r2.01.03/d2/kiouazan" target="_blank" class="project-link">
-                  GitLab <img src="img/gitlab-logo-500.png" alt="GitLab" class="gitlab-icon">
-                </a>
-
-              </div>
-            </div>
-            <div class="project-tech">Java • JavaFX • MySQL • FXML • MVC</div>
-            <p>
-              <strong>Avril-Juillet 2025</strong> - Application desktop complète de gestion avec interface graphique moderne.
-  Architecture MVC, connexion base de données, gestion utilisateurs et 
-  authentification. Interface responsive avec thème sombre/clair.
-            </p>
-            <div class="project-images">
-              <img src="img/JavaFX.png" alt="Interface" class="project-image">
-              <img src="img/mvc_ERP_GP(2).jpg" alt="Dashboard" class="project-image">
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Site Web Hardis Group</h3>
-              <div class="project-links">
-                <a href="https://github.com/Jolly-Ak/Hardis-Group" target="_blank" class="project-link">
-                  GitHub <img src="img/GitHub-icone.png" alt="GitHub" class="github-icon">
-                </a>
-              </div>
-            </div>
-            <div class="project-tech">HTML • CSS • JavaScript • PHP</div>
-            <p>
-              <strong>Septembre-Octobre 2024</strong> - Ce projet consistait à concevoir et réaliser un site web institutionnel pour l’entreprise Hardis Group, à destination d’un jeune public (génération Alpha). Le site présente l’entreprise, 
-              ses activités numériques et sa transition écologique de manière vulgarisée, claire et sobre.
-            </p>
-            <div class="project-images">
-              <img src="img/Hardis.png" alt="Homepage" class="project-image">
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Sort Game</h3>
-              <div class="project-links">
-                <a href="https://github.com/Jolly-Ak/SortGame" target="_blank" class="project-link">
-                  GitHub <img src="img/GitHub-icone.png" alt="GitHub" class="github-icon">
-                </a>
-              </div>
-            </div>
-            <div class="project-tech">Python • Tkinter • POO • Game Development • </div>
-            <p>
-              <strong>Mai-Juin 2023</strong> - Sort Game est un jeu développé en Python avec Tkinter, combinant une interface graphique interactive et une logique orientée objet. Le joueur doit trier des éléments visuellement dans des tubes.
-            </p>
-            <div class="project-images">
-              <img src="img/sortgame.png" alt="Interface du jeu" class="project-image">
-              <img src="img/sortgame2.png" alt="Niveau avec tubes" class="project-image">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section">
         
-
-
-        <h2 class="section-title">Compétences</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h4>Développement</h4>
-            <ul class="skill-list">
-              <li>Python, Java, JavaFX</li>
-              <li>HTML, CSS, JavaScript</li>
-              <li>Programmation orientée objet (POO)</li>
-              <li>Développement web responsive</li>
-            </ul>
-          </div>
-        
-          <div class="skill-category">
-            <h4>Data Science & IA</h4>
-            <ul class="skill-list">
-              <li>Machine Learning, Deep Learning</li>
-              <li>TensorFlow, Keras</li>
-              <li>NumPy, Pandas, Matplotlib</li>
-              <li>Réseaux de neurones (CNN)</li>
-            </ul>
-          </div>
-        
-          <div class="skill-category">
-            <h4>Bases de données</h4>
-            <ul class="skill-list">
-              <li>SQL (requêtes complexes)</li>
-              <li>MySQL, PostgreSQL</li>
-              <li>Modélisation, conception schéma</li>
-              <li>Connexion avec Java/PHP</li>
-            </ul>
-          </div>
-        
-          <div class="skill-category">
-            <h4>Outils & Systèmes</h4>
-            <ul class="skill-list">
-              <li>Git, GitHub, GitLab</li>
-              <li>Linux, Windows, Ubuntu Server</li>
-              <li>Réseaux, cybersécurité (bases)</li>
-              <li>Visual Studio Code, IntelliJ, NetBeans</li>
-            </ul>
-          </div>
-        
-          <div class="skill-category">
-            <h4>Langues</h4>
-            <div class="languages-grid">
-              <div class="language-item">
-                <div class="flag">🇫🇷</div>
-                <strong>Français</strong><br />Natif
-              </div>
-              <div class="language-item">
-                <div class="flag">🇬🇧</div>
-                <strong>Anglais</strong><br />B2
-              </div>
-              <div class="language-item">
-                <div class="flag">🇸🇦</div>
-                <strong>Arabe</strong><br />A2
-              </div>
-              <div class="language-item">
-                <div class="flag">🇮🇹</div>
-                <strong>Italien</strong><br />Notions
-              </div>
-            </div>
-          </div>
-        
-          <div class="skill-category">
-            <h4>Centres d’intérêt</h4>
-            <div class="interests-list">
-              <div class="interest-item">Boxe (compétition)</div>
-              <div class="interest-item">Natation</div>
-              <div class="interest-item">Échecs</div>
-              <div class="interest-item">Callisthénie</div>
-              <div class="interest-item">Ultimate</div>
-              <div class="interest-item">League of Legends (Platinum)</div>
-            </div>
-          </div>
+        <div class="scroll-indicator">
+            <span>Défiler</span>
+            <div class="scroll-line"></div>
         </div>
-      </section>
+    </section>
+
+    <section id="about" class="section-narrative">
+        <div class="container-fluid">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-number">01</span>
+                <h2 class="section-title-large">Mon Parcours</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-story" data-scroll-reveal>
+                    <div class="story-block">
+                        <h3 class="story-title">Développeur en Formation</h3>
+                        <p>
+                            Étudiant de 19 ans en deuxième année de BUT <strong>Informatique</strong> à l'IUT2 de Grenoble, 
+                            titulaire d'un baccalauréat scientifique mention <strong>Bien</strong>. 
+                            Je me forme en développement <strong>logiciel</strong>, intelligence <strong>artificielle</strong> 
+                            et analyse de <strong>données</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="story-block">
+                        <p>
+                            Mon parcours m'a permis d'acquérir des compétences en <strong>programmation</strong>, 
+                            notamment en <strong>Python</strong> et <strong>Java</strong>, ainsi que des bases en 
+                            machine <strong>learning</strong> et développement <strong>web</strong> à travers divers projets.
+                        </p>
+                    </div>
+                    
+                    <div class="story-block">
+                        <p>
+                            Je cherche à résoudre des problématiques <strong>réelles</strong> tout en continuant 
+                            d'<strong>apprendre</strong> et en développant mon <strong>autonomie</strong> et mon 
+                            esprit de <strong>collaboration</strong>.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="about-details" data-scroll-reveal>
+                    <div class="details-card">
+                        <div class="detail-row">
+                            <span class="detail-label">Âge</span>
+                            <span class="detail-value">19 ans</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Localisation</span>
+                            <span class="detail-value">Saint-Martin-d'Hères, FR</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Formation</span>
+                            <span class="detail-value">BUT Informatique (IUT2)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Disponibilité</span>
+                            <span class="detail-value">Stage 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-projects">
+        <div class="container-fluid">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-number">02</span>
+                <h2 class="section-title-large">Projets Sélectionnés</h2>
+            </div>
+            
+            <div class="projects-grid">
+            <div class="projects-masonry">
+                <article class="project-card project-large" data-project-id="ml" data-scroll-reveal>
+                    <div class="project-image-wrapper">
+                        <img src="img/ML1.png" alt="Classification ML" class="project-img">
+                        <div class="project-overlay">
+                            <span class="view-project">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-category">Machine Learning</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3 class="project-title">Classification de Dépêches</h3>
+                        <p class="project-description">Système de classification automatique d'articles avec NLP et KNN</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>NLP</span>
+                            <span>TF-IDF</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project-id="cnn" data-scroll-reveal>
+                    <div class="project-image-wrapper">
+                        <img src="img/1745556736982.jpg" alt="CNN Classification" class="project-img">
+                        <div class="project-overlay">
+                            <span class="view-project">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-category">Deep Learning</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-title">Classification par CNN</h3>
+                        <p class="project-description">Réseau de neurones convolutifs pour classification d'images</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Keras</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card" data-project-id="weave" data-scroll-reveal>
+                  <div class="project-image-wrapper">
+                      <img src="img/weave_dashboard.png" alt="Weave Dashboard" class="project-img">
+                      <div class="project-overlay">
+                          <span class="view-project">Voir le projet</span>
+                      </div>
+                  </div>
+                  <div class="project-info">
+                      <div class="project-meta">
+                          <span class="project-category">Full Stack & Mobile</span>
+                          <span class="project-year">2025</span>
+                      </div>
+                      <h3 class="project-title">Weave Health</h3>
+                      <p class="project-description">Plateforme collaborative de coordination de soins à domicile (Web & Mobile)</p>
+                      <div class="project-tech">
+                          <span>React</span>
+                          <span>Node.js</span>
+                          <span>Docker</span>
+                          <span>Azure</span>
+                      </div>
+                  </div>
+              </article>
+
+                <article class="project-card project-tall" data-project-id="javafx" data-scroll-reveal>
+                    <div class="project-image-wrapper">
+                        <img src="img/JavaFX.png" alt="ERP JavaFX" class="project-img">
+                        <div class="project-overlay">
+                            <span class="view-project">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-category">Application Desktop</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3 class="project-title">ERP Grand Prix</h3>
+                        <p class="project-description">Application de gestion complète pour événements sportifs</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>JavaFX</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project-id="web" data-scroll-reveal>
+                    <div class="project-image-wrapper">
+                        <img src="img/Hardis.png" alt="Site Hardis" class="project-img">
+                        <div class="project-overlay">
+                            <span class="view-project">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-category">Développement Web</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-title">Site Hardis Group</h3>
+                        <p class="project-description">Site institutionnel avec design responsive et interactif</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card project-wide" data-project-id="game" data-scroll-reveal>
+                    <div class="project-image-wrapper">
+                        <img src="img/sortgame.png" alt="Sort Game" class="project-img">
+                        <div class="project-overlay">
+                            <span class="view-project">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-category">Game Development</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <h3 class="project-title">Sort Game</h3>
+                        <p class="project-description">Jeu de réflexion et stratégie avec interface Tkinter</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Tkinter</span>
+                            <span>POO</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-detail-modal">
+        <div class="modal-close-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="modal-container">
+            <div class="modal-left">
+                <div class="modal-header">
+                    <span class="modal-category"></span>
+                    <span class="modal-year"></span>
+                </div>
+                <h2 class="modal-title"></h2>
+                <div class="modal-tech-stack"></div>
+                <div class="modal-section">
+                    <h3>Contexte</h3>
+                    <p class="modal-context"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Mon Rôle</h3>
+                    <p class="modal-role"></p>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" target="_blank" class="modal-btn-github">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+                        </svg>
+                        <span>Voir sur GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-right">
+                <div class="modal-gallery"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="contact">
-      <div class="footer-container">
-        <div class="footer-logo">Anas KIOUAZ</div>
-        <nav class="footer-links">
-          <a href="#home">Accueil</a>
-          <a href="#about">À propos</a>
-          <a href="#education">Formation</a>
-          <a href="#projects">Projets</a>
-          <a href="#skills">Compétences</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="footer-socials">
-          <a href="https://github.com/Jolly-Ak" target="_blank" aria-label="GitHub"><span>🐙</span></a>
-          <a href="mailto:anas.kiouaz@gmail.com" target="_blank" aria-label="Mail"><span>✉️</span></a>
-          <a href="https://www.linkedin.com/in/anas-kiouaz-b12a59362/" target="_blank" aria-label="LinkedIn"><span>in</span></a>
+    <div class="fullscreen-viewer">
+        <div class="fullscreen-close-btn">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
         </div>
-      </div>
-      <div class="footer-infos">
-        <div>
-          <strong>Nom&nbsp;:</strong> KIOUAZ<br>
-          <strong>Prénom&nbsp;:</strong> Anas<br>
-          <strong>Date de naissance&nbsp;:</strong> 18/05/2006
+        <img src="" alt="" class="fullscreen-image">
+    </div>
+
+    <section id="skills" class="section-skills">
+        <div class="container-fluid">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-number">03</span>
+                <h2 class="section-title-large">Expertise Technique</h2>
+            </div>
+            
+            <div class="skills-layout">
+                <div class="skill-domain" data-scroll-reveal>
+                    <h3 class="skill-domain-title">Développement</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaFX</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">POO</span>
+                    </div>
+                </div>
+                
+                <div class="skill-domain" data-scroll-reveal>
+                    <h3 class="skill-domain-title">Data Science & IA</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">CNN</span>
+                    </div>
+                </div>
+                
+                <div class="skill-domain" data-scroll-reveal>
+                    <h3 class="skill-domain-title">Bases de Données</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Modélisation</span>
+                    </div>
+                </div>
+                
+                <div class="skill-domain" data-scroll-reveal>
+                    <h3 class="skill-domain-title">Outils & Systèmes</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">GitLab</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">IntelliJ</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages-grid" data-scroll-reveal>
+                <div class="language-card">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="lang-name">Français</span>
+                    <span class="lang-level">Natif</span>
+                </div>
+                <div class="language-card">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">Anglais</span>
+                    <span class="lang-level">B2</span>
+                </div>
+                <div class="language-card">
+                    <span class="lang-flag">🇸🇦</span>
+                    <span class="lang-name">Arabe</span>
+                    <span class="lang-level">A2</span>
+                </div>
+                <div class="language-card">
+                    <span class="lang-flag">🇮🇹</span>
+                    <span class="lang-name">Italien</span>
+                    <span class="lang-level">Notions</span>
+                </div>
+            </div>
+            
+            <div class="interests-section" data-scroll-reveal>
+                <h3 class="interests-title">Centres d'Intérêt</h3>
+                <div class="interests-flow">
+                    <span class="interest-badge">Boxe (compétition)</span>
+                    <span class="interest-badge">Natation</span>
+                    <span class="interest-badge">Échecs</span>
+                    <span class="interest-badge">Callisthénie</span>
+                    <span class="interest-badge">Ultimate</span>
+                    <span class="interest-badge">League of Legends</span>
+                </div>
+            </div>
         </div>
-        <div>
-          <strong>Email&nbsp;:</strong> <a href="mailto:anas.kiouaz@gmail.com">anas.kiouaz@gmail.com</a><br>
-          <strong>Téléphone&nbsp;:</strong> <a href="tel:+33612345678">06 52 78 37 56</a>
+    </section>
+
+    <footer id="contact" class="footer-section">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h2 class="footer-title" data-scroll-reveal>
+                        Travaillons<br>
+                        <span class="text-accent">Ensemble</span>
+                    </h2>
+                    <p class="footer-description" data-scroll-reveal>
+                        Je suis disponible pour des stages, projets ou collaborations freelance. 
+                        N'hésitez pas à me contacter.
+                    </p>
+                </div>
+                
+                <div class="footer-contact" data-scroll-reveal>
+                    <a href="mailto:anas.kiouaz@example.com" class="contact-link">
+                        <span>anas.kiouaz@example.com</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+33652783756" class="contact-link">
+                        <span>+33 6 52 78 37 56</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="footer-socials" data-scroll-reveal>
+                    <a href="https://github.com/Jolly-Ak" target="_blank" class="social-link">
+                        <span>GitHub</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 16L16 4M16 4H8M16 4V12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anas-kiouaz-b12a59362/" target="_blank" class="social-link">
+                        <span>LinkedIn</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 16L16 4M16 4H8M16 4V12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Anas KIOUAZ. Tous droits réservés.</p>
+                <p class="footer-location">Grenoble, France</p>
+            </div>
         </div>
-      </div>
-      <div class="footer-copyright">
-        © 2025 Anas KIOUAZ — Tous droits réservés.
-      </div>
     </footer>
-    <!-- À ajouter juste avant la balise </body> -->
-<script src="sciprt.js"></script>
-  </body>
+
+    <script src="script.js"></script>
+    <script src="js/projects.js"></script>
+</body>
 </html>
-
-
