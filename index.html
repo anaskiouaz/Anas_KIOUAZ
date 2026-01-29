@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
     <div class="custom-cursor"></div>
@@ -359,89 +360,238 @@
             <div class="section-header" data-scroll-reveal>
                 <span class="section-number">03</span>
                 <h2 class="section-title-large">Expertise Technique</h2>
+                <p class="section-subtitle">Technologies et compétences que je maîtrise</p>
             </div>
             
-            <div class="skills-layout">
-                <div class="skill-domain" data-scroll-reveal>
-                    <h3 class="skill-domain-title">Développement</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaFX</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">POO</span>
+            <!-- Cartes de compétences avec niveaux et animations -->
+            <div class="skills-grid">
+                <div class="skill-card" data-scroll-reveal data-skill="python">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/>
+                                <path d="M12 12v5"/>
+                                <path d="M12 12L2 7"/>
+                                <path d="M12 12l10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="55"></div>
+                    </div>
+                    <p class="skill-description">Machine Learning, Data Science, Scripts</p>
+                    <div class="skill-tags-mini">
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                        <span>TensorFlow</span>
                     </div>
                 </div>
-                
-                <div class="skill-domain" data-scroll-reveal>
-                    <h3 class="skill-domain-title">Data Science & IA</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">CNN</span>
+
+                <div class="skill-card" data-scroll-reveal data-skill="java">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M9 9h.01M15 9h.01M9 15h6"/>
+                            </svg>
+                        </div>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="85"></div>
+                    </div>
+                    <p class="skill-description">POO, Applications Desktop, Algorithmes</p>
+                    <div class="skill-tags-mini">
+                        <span>JavaFX</span>
+                        <span>JDBC</span>
+                        <span>MVC</span>
                     </div>
                 </div>
-                
-                <div class="skill-domain" data-scroll-reveal>
-                    <h3 class="skill-domain-title">Bases de Données</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Modélisation</span>
+
+                <div class="skill-card" data-scroll-reveal data-skill="web">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3>Web Dev</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="85"></div>
+                    </div>
+                    <p class="skill-description">Frontend moderne, UI/UX, Responsive</p>
+                    <div class="skill-tags-mini">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
                     </div>
                 </div>
-                
-                <div class="skill-domain" data-scroll-reveal>
-                    <h3 class="skill-domain-title">Outils & Systèmes</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">GitLab</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">IntelliJ</span>
+
+                <div class="skill-card" data-scroll-reveal data-skill="ai">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>IA & ML</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="65"></div>
+                    </div>
+                    <p class="skill-description">Deep Learning, CNN, NLP</p>
+                    <div class="skill-tags-mini">
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>CNN</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-scroll-reveal data-skill="database">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                            </svg>
+                        </div>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="80"></div>
+                    </div>
+                    <p class="skill-description">SQL, Design, Optimisation</p>
+                    <div class="skill-tags-mini">
+                        <span>MySQL</span>
+                        <span>PostgreSQL</span>
+                        <span>Modélisation</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-scroll-reveal data-skill="tools">
+                    <div class="skill-card-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>DevOps</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-bar" data-level="90"></div>
+                    </div>
+                    <p class="skill-description">Versioning, CI/CD, Conteneurisation</p>
+                    <div class="skill-tags-mini">
+                        <span>Git</span>
+                        <span>Docker</span>
+                        <span>Linux</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langues avec animations -->
+            <div class="languages-section" data-scroll-reveal>
+                <h3 class="subsection-title">Langues</h3>
+                <div class="languages-grid-new">
+                    <div class="language-card-new" data-lang="french">
+                        <div class="lang-flag-circle">🇫🇷</div>
+                        <h4 class="lang-name">Français</h4>
+                        <div class="lang-level-bar">
+                            <div class="lang-level-fill" data-level="100"></div>
+                        </div>
+                        <span class="lang-label">Natif</span>
+                    </div>
+                    <div class="language-card-new" data-lang="english">
+                        <div class="lang-flag-circle">🇬🇧</div>
+                        <h4 class="lang-name">Anglais</h4>
+                        <div class="lang-level-bar">
+                            <div class="lang-level-fill" data-level="75"></div>
+                        </div>
+                        <span class="lang-label">B2</span>
+                    </div>
+                    <div class="language-card-new" data-lang="arabic">
+                        <div class="lang-flag-circle">🇸🇦</div>
+                        <h4 class="lang-name">Arabe</h4>
+                        <div class="lang-level-bar">
+                            <div class="lang-level-fill" data-level="75"></div>
+                        </div>
+                        <span class="lang-label">B2</span>
+                    </div>
+                    <div class="language-card-new" data-lang="italian">
+                        <div class="lang-flag-circle">🇮🇹</div>
+                        <h4 class="lang-name">Italien</h4>
+                        <div class="lang-level-bar">
+                            <div class="lang-level-fill" data-level="30"></div>
+                        </div>
+                        <span class="lang-label">Notions</span>
                     </div>
                 </div>
             </div>
             
-            <div class="languages-grid" data-scroll-reveal>
-                <div class="language-card">
-                    <span class="lang-flag">🇫🇷</span>
-                    <span class="lang-name">Français</span>
-                    <span class="lang-level">Natif</span>
-                </div>
-                <div class="language-card">
-                    <span class="lang-flag">🇬🇧</span>
-                    <span class="lang-name">Anglais</span>
-                    <span class="lang-level">B2</span>
-                </div>
-                <div class="language-card">
-                    <span class="lang-flag">🇸🇦</span>
-                    <span class="lang-name">Arabe</span>
-                    <span class="lang-level">A2</span>
-                </div>
-                <div class="language-card">
-                    <span class="lang-flag">🇮🇹</span>
-                    <span class="lang-name">Italien</span>
-                    <span class="lang-level">Notions</span>
-                </div>
-            </div>
-            
-            <div class="interests-section" data-scroll-reveal>
-                <h3 class="interests-title">Centres d'Intérêt</h3>
-                <div class="interests-flow">
-                    <span class="interest-badge">Boxe (compétition)</span>
-                    <span class="interest-badge">Natation</span>
-                    <span class="interest-badge">Échecs</span>
-                    <span class="interest-badge">Callisthénie</span>
-                    <span class="interest-badge">Ultimate</span>
-                    <span class="interest-badge">League of Legends</span>
+            <!-- Centres d'intérêt version ludique -->
+            <div class="interests-section-new" data-scroll-reveal>
+                <h3 class="subsection-title">Centres d'Intérêt</h3>
+                <p class="interests-intro">Au-delà du code, ce qui me passionne</p>
+                
+                <div class="interests-showcase">
+                    <div class="interest-card-new" data-interest="boxing">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">🥊</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>Boxe Compétition</h4>
+                        <p>Discipline, stratégie et dépassement de soi</p>
+                    </div>
+
+                    <div class="interest-card-new" data-interest="swimming">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">🏊</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>Natation</h4>
+                        <p>Endurance et clarté mentale</p>
+                    </div>
+
+                    <div class="interest-card-new" data-interest="chess">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">♟️</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>Échecs</h4>
+                        <p>Tactique et anticipation</p>
+                    </div>
+
+                    <div class="interest-card-new" data-interest="calisthenics">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">💪</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>Callisthénie</h4>
+                        <p>Force et contrôle du corps</p>
+                    </div>
+
+                    <div class="interest-card-new" data-interest="ultimate">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">🥏</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>Ultimate Frisbee</h4>
+                        <p>Esprit d'équipe et fair-play</p>
+                    </div>
+
+                    <div class="interest-card-new" data-interest="gaming">
+                        <div class="interest-visual">
+                            <div class="interest-emoji">🎮</div>
+                            <div class="interest-particles"></div>
+                        </div>
+                        <h4>League of Legends</h4>
+                        <p>Stratégie en temps réel</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -495,11 +645,14 @@
             <div class="footer-bottom">
                 <p class="footer-copyright">© 2025 Anas KIOUAZ. Tous droits réservés.</p>
                 <p class="footer-location">Grenoble, France</p>
+
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    
     <script src="js/projects.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+            

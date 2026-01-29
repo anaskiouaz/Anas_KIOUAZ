@@ -572,3 +572,229 @@ if (window.performance && window.console) {
         console.log(`%c⚡ Portfolio loaded in ${pageLoadTime}ms`, 'color: #6B46FF; font-size: 14px; font-weight: bold;');
     });
 }
+// ============================================
+// ENHANCED SKILLS ANIMATIONS
+// ============================================
+
+class EnhancedSkillsAnimations {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.animateSkillBars();
+        this.animateLanguageBars();
+        this.setupInterestCardEffects();
+    }
+
+    animateSkillBars() {
+        const skillCards = document.querySelectorAll('.skill-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const bar = card.querySelector('.skill-bar');
+                    const level = bar.getAttribute('data-level');
+                    
+                    setTimeout(() => {
+                        bar.style.width = level + '%';
+                    }, 200);
+                    
+                    observer.unobserve(card);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        skillCards.forEach(card => observer.observe(card));
+    }
+
+    animateLanguageBars() {
+        const langCards = document.querySelectorAll('.language-card-new');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const fill = card.querySelector('.lang-level-fill');
+                    const level = fill.getAttribute('data-level');
+                    
+                    setTimeout(() => {
+                        fill.style.width = level + '%';
+                        card.classList.add('revealed');
+                    }, index * 100);
+                    
+                    observer.unobserve(card);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        langCards.forEach(card => observer.observe(card));
+    }
+
+    setupInterestCardEffects() {
+        const interestCards = document.querySelectorAll('.interest-card-new');
+        
+        interestCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                this.createFloatingParticles(card);
+            });
+
+            card.addEventListener('click', () => {
+                this.createRippleEffect(card);
+            });
+        });
+    }
+
+    createFloatingParticles(card) {
+        const particleContainer = card.querySelector('.interest-particles');
+        if (!particleContainer) return;
+
+        for (let i = 0; i < 5; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            
+            const size = Math.random() * 4 + 2;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const delay = Math.random() * 0.5;
+            
+            particle.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                background: var(--accent);
+                border-radius: 50%;
+                left: ${x}%;
+                top: ${y}%;
+                opacity: 0;
+                animation: float-up 1.5s ease-out ${delay}s;
+                pointer-events: none;
+            `;
+            
+            particleContainer.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 2000);
+        }
+    }
+
+    createRippleEffect(card) {
+        const ripple = document.createElement('div');
+        ripple.className = 'click-ripple';
+        
+        ripple.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107, 70, 255, 0.4), transparent);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: ripple-expand 0.8s ease-out;
+        `;
+        
+        card.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 800);
+    }
+}
+
+// Ajouter les animations CSS via JavaScript
+const enhancedStyles = document.createElement('style');
+enhancedStyles.textContent = `
+    @keyframes float-up {
+        0% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px) scale(0);
+        }
+    }
+
+    @keyframes ripple-expand {
+        0% {
+            width: 0;
+            height: 0;
+            opacity: 0.6;
+        }
+        100% {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+    }
+
+    /* Glow effect pour les cartes au scroll */
+    .skill-card.revealed {
+        animation: card-glow 0.8s ease-out;
+    }
+
+    @keyframes card-glow {
+        0% {
+            box-shadow: 0 0 0 rgba(107, 70, 255, 0);
+        }
+        50% {
+            box-shadow: 0 0 30px rgba(107, 70, 255, 0.5);
+        }
+        100% {
+            box-shadow: 0 0 0 rgba(107, 70, 255, 0);
+        }
+    }
+
+    /* Animation d'apparition progressive */
+    .interest-card-new {
+        animation: fade-in-up-interest 0.6s ease-out backwards;
+    }
+
+    .interest-card-new:nth-child(1) { animation-delay: 0.1s; }
+    .interest-card-new:nth-child(2) { animation-delay: 0.2s; }
+    .interest-card-new:nth-child(3) { animation-delay: 0.3s; }
+    .interest-card-new:nth-child(4) { animation-delay: 0.4s; }
+    .interest-card-new:nth-child(5) { animation-delay: 0.5s; }
+    .interest-card-new:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fade-in-up-interest {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Rotation de l'icône au hover */
+    .skill-card:hover .skill-icon svg {
+        animation: icon-pulse 0.6s ease-in-out;
+    }
+
+    @keyframes icon-pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    /* Effet de lueur sur les emojis */
+    .interest-emoji::after {
+        content: attr(data-emoji);
+        position: absolute;
+        inset: 0;
+        filter: blur(20px);
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .interest-card-new:hover .interest-emoji::after {
+        opacity: 0.5;
+    }
+`;
+
+document.head.appendChild(enhancedStyles);
+
+// Initialiser les animations au chargement
+document.addEventListener('DOMContentLoaded', () => {
+    new EnhancedSkillsAnimations();
+});
