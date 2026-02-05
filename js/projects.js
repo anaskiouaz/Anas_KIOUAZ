@@ -177,7 +177,11 @@ class ProjectsSystem {
         
         setTimeout(() => {
             document.body.style.overflow = '';
-            window.scrollTo(0, this.scrollPosition);
+            // Only scroll back if we opened a project (and thus saved a position)
+            if (this.currentProject) {
+                window.scrollTo(0, this.scrollPosition);
+                this.currentProject = null; // Reset
+            }
         }, 500);
     }
 

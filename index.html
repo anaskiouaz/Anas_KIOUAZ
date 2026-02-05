@@ -117,26 +117,23 @@
                     <div class="story-block">
                         <h3 class="story-title">Développeur en Formation</h3>
                         <p>
-                            Étudiant de 19 ans en deuxième année de BUT <strong>Informatique</strong> à l'IUT2 de Grenoble, 
-                            titulaire d'un baccalauréat scientifique mention <strong>Bien</strong>. 
-                            Je me forme en développement <strong>logiciel</strong>, intelligence <strong>artificielle</strong> 
-                            et analyse de <strong>données</strong>.
+                            Étudiant en Informatique passionné par l'<strong>IA</strong> et le développement <strong>Full-Stack</strong>. 
+                            Fort d'une expérience pratique sur des architectures <strong>MVC</strong> et des pipelines <strong>CI/CD</strong>, 
+                            je cherche un stage pour appliquer ma rigueur <strong>algorithmique</strong> à des problèmes concrets.
                         </p>
                     </div>
                     
                     <div class="story-block">
                         <p>
-                            Mon parcours m'a permis d'acquérir des compétences en <strong>programmation</strong>, 
-                            notamment en <strong>Python</strong> et <strong>Java</strong>, ainsi que des bases en 
-                            machine <strong>learning</strong> et développement <strong>web</strong> à travers divers projets.
+                            Mon parcours combine une solide base théorique (Bac S mention Bien) et une expertise technique opérationnelle 
+                            (Node.js, JavaFX, Docker). Je ne me contente pas de coder : je conçois des architectures pérennes et sécurisées.
                         </p>
                     </div>
                     
                     <div class="story-block">
                         <p>
-                            Je cherche à résoudre des problématiques <strong>réelles</strong> tout en continuant 
-                            d'<strong>apprendre</strong> et en développant mon <strong>autonomie</strong> et mon 
-                            esprit de <strong>collaboration</strong>.
+                            Objectif : Intégrer une équipe technique exigeante en stage (2025), puis poursuivre en alternance vers un diplôme 
+                            d'ingénieur et la recherche.
                         </p>
                     </div>
                 </div>
@@ -187,11 +184,11 @@
                             <span class="project-year">2025</span>
                         </div>
                         <h3 class="project-title">Classification de Dépêches</h3>
-                        <p class="project-description">Système de classification automatique d'articles avec NLP et KNN</p>
+                        <p class="project-description">Algorithme optimisé (<strong>Recherche Binaire</strong>) pour classification NLP haute performance</p>
                         <div class="project-tech">
                             <span>Java</span>
+                            <span>Optimisation</span>
                             <span>NLP</span>
-                            <span>TF-IDF</span>
                         </div>
                     </div>
                 </article>
@@ -209,11 +206,11 @@
                             <span class="project-year">2024</span>
                         </div>
                         <h3 class="project-title">Classification par CNN</h3>
-                        <p class="project-description">Réseau de neurones convolutifs pour classification d'images</p>
+                        <p class="project-description">Réseau de neurones convolutif. Analyse de précision et métriques scientifiques.</p>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>TensorFlow</span>
-                            <span>Keras</span>
+                            <span>Data Science</span>
                         </div>
                     </div>
                 </article>
@@ -229,14 +226,14 @@
                           <span class="project-category">Full Stack & Mobile</span>
                           <span class="project-year">2025</span>
                       </div>
-                      <h3 class="project-title">Weave Health</h3>
-                      <p class="project-description">Plateforme collaborative de coordination de soins à domicile (Web & Mobile)</p>
-                      <div class="project-tech">
-                          <span>React</span>
-                          <span>Node.js</span>
-                          <span>Docker</span>
-                          <span>Azure</span>
-                      </div>
+                        <h3 class="project-title">Weave Health</h3>
+                        <p class="project-description">Plateforme Full-Stack axée <strong>Sécurité & RGPD</strong> pour la coordination de soins</p>
+                        <div class="project-tech">
+                            <span>React/Node</span>
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
+                            <span>Sécurité</span>
+                        </div>
                   </div>
               </article>
 
@@ -253,10 +250,10 @@
                             <span class="project-year">2025</span>
                         </div>
                         <h3 class="project-title">ERP Grand Prix</h3>
-                        <p class="project-description">Application de gestion complète pour événements sportifs</p>
+                        <p class="project-description">Architecture logicielle <strong>MVC</strong> complexe avec conception <strong>UML</strong> détaillée</p>
                         <div class="project-tech">
-                            <span>Java</span>
                             <span>JavaFX</span>
+                            <span>UML/Design</span>
                             <span>MySQL</span>
                         </div>
                     </div>
@@ -361,10 +358,25 @@
                 <span class="section-number">03</span>
                 <h2 class="section-title-large">Expertise Technique</h2>
                 <p class="section-subtitle">Technologies et compétences que je maîtrise</p>
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-number">03</span>
+                <h2 class="section-title-large">Expertise Technique</h2>
+                <p class="section-subtitle">Technologies et compétences en mouvement</p>
             </div>
             
-            <!-- Cartes de compétences avec niveaux et animations -->
-            <div class="skills-grid">
+            <!-- SKILL SACK CONTAINER -->
+            <div id="skill-sack-container" class="skill-sack-wrapper">
+                <canvas id="physics-canvas"></canvas>
+                <div id="dom-layer"></div>
+                
+                <div class="sack-instructions">
+                    <span>Secouez, lancez, cliquez</span>
+                </div>
+            </div>
+
+            <!-- ANCIENNE GRILLE (Hidden or Removed) -->
+            <!-- <div class="skills-grid"> ... </div> -->
+
                 <div class="skill-card" data-scroll-reveal data-skill="python">
                     <div class="skill-card-header">
                         <div class="skill-icon">
@@ -485,10 +497,10 @@
                     <div class="skill-progress">
                         <div class="skill-bar" data-level="90"></div>
                     </div>
-                    <p class="skill-description">Versioning, CI/CD, Conteneurisation</p>
+                    <p class="skill-description">Infrastructure, Qualité & Performance</p>
                     <div class="skill-tags-mini">
-                        <span>Git</span>
-                        <span>Docker</span>
+                        <span><strong>Git / CI/CD</strong></span>
+                        <span><strong>Docker</strong></span>
                         <span>Linux</span>
                     </div>
                 </div>
@@ -563,7 +575,7 @@
                             <div class="interest-particles"></div>
                         </div>
                         <h4>Échecs</h4>
-                        <p>Tactique et anticipation</p>
+                        <p>Planification stratégique & Anticipation</p>
                     </div>
 
                     <div class="interest-card-new" data-interest="calisthenics">
@@ -590,7 +602,7 @@
                             <div class="interest-particles"></div>
                         </div>
                         <h4>League of Legends</h4>
-                        <p>Stratégie en temps réel</p>
+                        <p>Prise de décision rapide & Stratégie</p>
                     </div>
                 </div>
             </div>
@@ -650,7 +662,9 @@
         </div>
     </footer>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/physics-sack.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
