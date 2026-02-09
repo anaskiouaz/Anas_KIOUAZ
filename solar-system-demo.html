@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Skills - Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #000000 0%, #0a0a1a 50%, #000000 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Section Skills avec Système Solaire */
+        #skills {
+            position: relative;
+            min-height: 100vh;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .container-fluid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-number {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #4A9FFF;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title-large {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #4A9FFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Conteneur du Système Solaire */
+        #skill-solar-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            margin: 40px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, rgba(74, 159, 255, 0.1) 0%, transparent 70%);
+            box-shadow: 
+                inset 0 0 100px rgba(74, 159, 255, 0.1),
+                0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        #skill-solar-container canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Instructions */
+        .solar-instructions {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .solar-instructions::before {
+            content: '🌌';
+            font-size: 18px;
+        }
+
+        /* Panel d'informations */
+        .solar-info-panel {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Légende des catégories */
+        .solar-legend {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .solar-legend h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #4A9FFF;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .legend-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(74, 159, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        .legend-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .legend-info p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .legend-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .legend-tools span {
+            font-size: 11px;
+            padding: 3px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #skill-solar-container {
+                height: 500px;
+            }
+
+            .solar-legend {
+                padding: 20px;
+            }
+
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation de chargement */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(74, 159, 255, 0.2);
+            border-top-color: #4A9FFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <section id="skills">
+        <div class="container-fluid">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title-large">Expertise Technique</h2>
+                <p class="section-subtitle">Explorez mon univers de compétences en 3D</p>
+            </div>
+
+            <!-- Conteneur du Système Solaire -->
+            <div id="skill-solar-container">
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Chargement du système solaire...</div>
+                </div>
+                
+                <div class="solar-instructions">
+                    <span>Glissez pour tourner • Molette pour zoomer • Cliquez pour explorer</span>
+                </div>
+            </div>
+
+            <!-- Légende des catégories -->
+            <div class="solar-legend">
+                <h3>Univers de Compétences</h3>
+                <div class="legend-grid">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4285F4; color: #4285F4;"></div>
+                        <div class="legend-info">
+                            <h4>DevOps</h4>
+                            <p>Infrastructure & Automatisation</p>
+                            <div class="legend-tools">
+                                <span>Docker</span>
+                                <span>K8s</span>
+                                <span>CI/CD</span>
+                                <span>Azure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #E34F26; color: #E34F26;"></div>
+                        <div class="legend-info">
+                            <h4>Web Dev</h4>
+                            <p>Frontend & Backend Moderne</p>
+                            <div class="legend-tools">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>TypeScript</span>
+                                <span>HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF6B35; color: #FF6B35;"></div>
+                        <div class="legend-info">
+                            <h4>AI & ML</h4>
+                            <p>Intelligence Artificielle</p>
+                            <div class="legend-tools">
+                                <span>TensorFlow</span>
+                                <span>PyTorch</span>
+                                <span>Keras</span>
+                                <span>OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #336791; color: #336791;"></div>
+                        <div class="legend-info">
+                            <h4>Databases</h4>
+                            <p>Gestion de Données</p>
+                            <div class="legend-tools">
+                                <span>PostgreSQL</span>
+                                <span>MySQL</span>
+                                <span>MongoDB</span>
+                                <span>Redis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #339933; color: #339933;"></div>
+                        <div class="legend-info">
+                            <h4>Backend</h4>
+                            <p>Serveurs & API</p>
+                            <div class="legend-tools">
+                                <span>Java</span>
+                                <span>Python</span>
+                                <span>Express.js</span>
+                                <span>REST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Notre script du système solaire -->
+    <script src="solar-system-skills.js"></script>
+
+    <script>
+        // Cacher l'overlay de chargement une fois que Three.js est chargé
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const overlay = document.getElementById('loadingOverlay');
+                if (overlay) {
+                    overlay.classList.add('hidden');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

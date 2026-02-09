@@ -1,0 +1,213 @@
+/* ============================================
+     STYLES ADDITIONNELS POUR LANGUES ET INTÉRÊTS
+     ============================================ */
+/* Subsection Titles */
+.subsection-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 5rem 0 2rem;
+    position: relative;
+}
+
+.subsection-title svg {
+    color: var(--primary);
+}
+
+.subsection-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+    margin-left: 1rem;
+}
+
+/* Languages Grid */
+.languages-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.language-card-new {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(107, 70, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.language-card-new::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, var(--primary), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.language-card-new:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(107, 70, 255, 0.2);
+}
+
+.language-card-new:hover::before {
+    opacity: 0.05;
+}
+
+.lang-flag-circle {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.lang-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.lang-level-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.lang-level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 12px currentColor;
+}
+
+.lang-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Interests Section */
+.interests-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 1rem 0 3rem;
+    text-align: center;
+}
+
+.interests-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.interest-card-new {
+    background: linear-gradient(135deg, rgba(107, 70, 255, 0.05), rgba(255, 107, 169, 0.05));
+    border: 1px solid rgba(107, 70, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.interest-card-new::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--primary), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.interest-card-new:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow:
+        0 24px 48px rgba(107, 70, 255, 0.3),
+        0 0 80px rgba(107, 70, 255, 0.2);
+}
+
+.interest-card-new:hover::before {
+    opacity: 0.1;
+}
+
+.interest-visual {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.interest-emoji {
+    font-size: 4rem;
+    display: inline-block;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interest-card-new:hover .interest-emoji {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.interest-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.interest-card-new h4 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.interest-card-new p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.interest-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(107, 70, 255, 0.15);
+    border: 1px solid rgba(107, 70, 255, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+
+    .languages-grid-new,
+    .interests-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .subsection-title {
+        font-size: 1.5rem;
+        margin: 3rem 0 1.5rem;
+    }
+}
